@@ -1,5 +1,5 @@
 {
-  "name": "@sample/server",
+  "name": "@react-spy/transformer",
   "version": "1.0.0",
   "main": "cjs/index.js",
   "types": "cjs/index.d.ts",
@@ -7,17 +7,17 @@
     "clean": "rimraf ./cjs",
     "prebuild": "yarn clean",
     "build": "ts-build ./src --cjs",
-    "test": "mocha \"test/**/*.spec.ts?(x)\"",
+    "test": "mocha \"test/**/*.unit.ts?(x)\"",
     "prestart": "yarn workspace @sample/app build:umd",
     "start": "node -r @ts-tools/node/r -r tsconfig-paths/register ./src/server-main.ts",
     "prepack": "yarn build"
   },
   "peerDependencies": {
     "react": ">=16",
-    "react-dom": ">=16"
+    "react-dom": ">=16",
+    "typescript": ">=3"
   },
   "dependencies": {
-    "@sample/app": "^1.0.0",
     "compression": "^1.7.4",
     "express": "^4.17.1"
   },
